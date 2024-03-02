@@ -8,9 +8,7 @@
 This is a set of five console games. Each game asks the user a question and expects an answer.
 
 ### Requirements
-* python 3.12
-* poetry
-* make
+* python 3.9 or higher
 
 ### Installation
 ```bash
