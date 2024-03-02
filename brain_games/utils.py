@@ -1,3 +1,5 @@
+from typing import Union
+
 import prompt
 from random import randint
 
@@ -37,3 +39,15 @@ def get_gcd(a: int, b: int) -> str:
     while b:
         a, b = b, a % b
     return str(a)
+
+
+def rand_arithmetic_progression() -> tuple[list, str]:
+    start = random_number()
+    step = randint(1, 10)
+    len_progression = randint(5, 10)
+    progression: list[Union[int, str]] = \
+        [start + step * i for i in range(len_progression)]
+    hidden_index = randint(0, len_progression - 1)
+    right_answer = str(progression[hidden_index])
+    progression[hidden_index] = '..'
+    return progression, right_answer
