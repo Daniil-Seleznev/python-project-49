@@ -22,7 +22,7 @@ make build
 
 make package-install
 ```
-[![asciicast](https://asciinema.org/a/l40Lrk3midkLmNEOmgZErGnY7.svg)](https://asciinema.org/a/l40Lrk3midkLmNEOmgZErGnY7)
+[![asciicast](https://asciinema.org/a/RS1ryrb1d1trzPdBCXM4kwJLC.svg)](https://asciinema.org/a/RS1ryrb1d1trzPdBCXM4kwJLC)
 
 
 ### brain-games gameplay examples
