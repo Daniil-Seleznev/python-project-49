@@ -1,7 +1,8 @@
 from random import choice
 from brain_games.utils import (answer_try, random_number,
                                get_answer_of_expression, is_even,
-                               get_gcd, rand_arithmetic_progression)
+                               get_gcd, rand_arithmetic_progression,
+                               is_prime)
 
 retry_count = 3
 
@@ -55,6 +56,19 @@ def progression_game(name: str) -> None:
         progression, right_answer = rand_arithmetic_progression()
         print(f'Question: {" ".join(map(str, progression))}')
         if not answer_try(str(right_answer)):
+            print(f'Let\'s try again, {name}!')
+            break
+    else:
+        print(f'Congratulations!, {name}!')
+
+
+def prime_game(name: str) -> None:
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+    for _ in range(retry_count):
+        number = random_number()
+        right_answer = 'yes' if is_prime(number) else 'no'
+        print(f'Question: {number}')
+        if not answer_try(right_answer):
             print(f'Let\'s try again, {name}!')
             break
     else:

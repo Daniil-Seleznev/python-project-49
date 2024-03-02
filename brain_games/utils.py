@@ -51,3 +51,12 @@ def rand_arithmetic_progression() -> tuple[list, str]:
     right_answer = str(progression[hidden_index])
     progression[hidden_index] = '..'
     return progression, right_answer
+
+
+def is_prime(number: int) -> bool:
+    if number < 2:
+        return False
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+    return True
