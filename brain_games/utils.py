@@ -28,3 +28,9 @@ def get_answer_of_expression(number1, number2, operation):
 
 def is_even(number):
     return number % 2 == 0
+
+
+def get_gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return str(a)
