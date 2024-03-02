@@ -17,7 +17,7 @@ def even_game(name: str) -> None:
             print(f'Let\'s try again, {name}!')
             break
     else:
-        print(f'Congratulations!, {name}!')
+        print(f'Congratulations, {name}!')
 
 
 def calc_game(name: str) -> None:
@@ -33,7 +33,7 @@ def calc_game(name: str) -> None:
             print(f'Let\'s try again, {name}!')
             break
     else:
-        print(f'Congratulations!, {name}!')
+        print(f'Congratulations, {name}!')
 
 
 def gcd_game(name: str) -> None:
@@ -47,7 +47,7 @@ def gcd_game(name: str) -> None:
             print(f'Let\'s try again, {name}!')
             break
     else:
-        print(f'Congratulations!, {name}!')
+        print(f'Congratulations, {name}!')
 
 
 def progression_game(name: str) -> None:
@@ -59,7 +59,7 @@ def progression_game(name: str) -> None:
             print(f'Let\'s try again, {name}!')
             break
     else:
-        print(f'Congratulations!, {name}!')
+        print(f'Congratulations, {name}!')
 
 
 def prime_game(name: str) -> None:
@@ -72,4 +72,4 @@ def prime_game(name: str) -> None:
             print(f'Let\'s try again, {name}!')
             break
     else:
-        print(f'Congratulations!, {name}!')
+        print(f'Congratulations, {name}!')

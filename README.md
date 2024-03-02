@@ -15,12 +15,6 @@ This is a set of five console games. Each game asks the user a question and expe
 ### Installation
 ```bash
 pip install git+https://github.com/Daniil-Seleznev/python-project-49.git
-
-make install
-
-make build
-
-make package-install
 ```
 [![asciicast](https://asciinema.org/a/RS1ryrb1d1trzPdBCXM4kwJLC.svg)](https://asciinema.org/a/RS1ryrb1d1trzPdBCXM4kwJLC)
 
