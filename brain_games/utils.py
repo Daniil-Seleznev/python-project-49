@@ -1,4 +1,5 @@
 import prompt
+from random import randint
 
 
 def answer_try(right_answer):
@@ -10,3 +11,16 @@ def answer_try(right_answer):
         print(f"'{user_answer}' is wrong answer ;(. "
               f"Correct answer was '{right_answer}'.")
         return False
+
+
+def random_number():
+    return randint(1, 100)
+
+
+def get_answer_of_expression(number1, number2, operation):
+    if operation == '+':
+        return str(number1 + number2)
+    elif operation == '-':
+        return str(number1 - number2)
+    else:
+        return str(number1 * number2)
