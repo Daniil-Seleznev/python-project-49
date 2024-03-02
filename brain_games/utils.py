@@ -26,8 +26,11 @@ def get_answer_of_expression(number1: int, number2: int, operation: str) -> str:
         return str(number1 * number2)
 
 
-def is_even(number: int) -> bool:
-    return number % 2 == 0
+def is_even(number: int) -> str:
+    if number % 2 == 0:
+        return 'yes'
+    else:
+        return 'no'
 
 
 def get_gcd(a: int, b: int) -> str:
