@@ -24,3 +24,7 @@ def get_answer_of_expression(number1, number2, operation):
         return str(number1 - number2)
     else:
         return str(number1 * number2)
+
+
+def is_even(number):
+    return number % 2 == 0

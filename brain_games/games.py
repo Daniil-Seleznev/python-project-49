@@ -1,6 +1,6 @@
 from random import choice
 from brain_games.utils import (answer_try, random_number,
-                               get_answer_of_expression)
+                               get_answer_of_expression, is_even)
 
 retry_count = 3
 
@@ -9,7 +9,7 @@ def even_game(name: str) -> None:
     print('Answer "yes" if the number is even, otherwise answer "no".')
     for _ in range(retry_count):
         number = random_number()
-        right_answer = 'yes' if number % 2 == 0 else 'no'
+        right_answer = is_even(number)
         print(f'Question: {number}')
         if not answer_try(right_answer):
             break
