@@ -13,7 +13,7 @@ def answer_try(right_answer: str) -> bool:
         return False
 
 
-def random_number() -> int
+def random_number() -> int:
     return randint(1, 100)
 
 
