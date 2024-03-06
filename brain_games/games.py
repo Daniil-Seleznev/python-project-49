@@ -39,7 +39,7 @@ def progression_game() -> None:
     rules = 'What number is missing in the progression?'
     progressions = [rand_arithmetic_progression()
                     for _ in range(QUESTIONS_COUNT)]
-    questions = [progression for progression, _ in progressions]
+    questions = [' '.join(progression) for progression, _ in progressions]
     answers = [right_answer for _, right_answer in progressions]
     game_engine(rules, questions, answers)
 
