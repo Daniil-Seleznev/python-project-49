@@ -28,9 +28,10 @@ def calc_game() -> None:
 
 def gcd_game() -> None:
     rules = 'Find the greatest common divisor of given numbers.'
-    questions = [(random_number(), random_number())
+    numbers_pairs = [(random_number(), random_number())
                  for _ in range(QUESTIONS_COUNT)]
-    answers = [get_gcd(*question) for question in questions]
+    questions = [f'{number1} {number2}' for number1, number2 in numbers_pairs]
+    answers = [get_gcd(*question) for question in numbers_pairs]
     game_engine(rules, questions, answers)
 
 
