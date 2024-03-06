@@ -1,5 +1,4 @@
 from typing import Union
-
 import prompt
 from random import randint
 
@@ -53,10 +52,10 @@ def rand_arithmetic_progression() -> tuple[list, str]:
     return progression, right_answer
 
 
-def is_prime(number: int) -> bool:
+def is_prime(number: int) -> str:
     if number < 2:
-        return False
+        return 'no'
     for i in range(2, number):
         if number % i == 0:
-            return False
-    return True
+            return 'no'
+    return 'yes'

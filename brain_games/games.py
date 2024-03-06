@@ -1,75 +1,50 @@
 from random import choice
-from brain_games.utils import (answer_try, random_number,
+from brain_games.utils import (random_number,
                                get_answer_of_expression, is_even,
                                get_gcd, rand_arithmetic_progression,
                                is_prime)
+from brain_games.engine import game_engine
 
-RETRY_COUNT = 3
-
-
-def even_game(name: str) -> None:
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    for _ in range(RETRY_COUNT):
-        number = random_number()
-        right_answer = is_even(number)
-        print(f'Question: {number}')
-        if not answer_try(right_answer):
-            print(f'Let\'s try again, {name}!')
-            break
-    else:
-        print(f'Congratulations, {name}!')
+QUESTIONS_COUNT = 3
 
 
-def calc_game(name: str) -> None:
-    print('What is the result of the expression?')
-    for _ in range(RETRY_COUNT):
-        number1 = random_number()
-        number2 = random_number()
-        operation = choice(['+', '-', '*'])
-        print(f'Question: {number1} {operation} {number2}')
-        right_answer = get_answer_of_expression(number1, number2, operation)
-
-        if not answer_try(right_answer):
-            print(f'Let\'s try again, {name}!')
-            break
-    else:
-        print(f'Congratulations, {name}!')
+def even_game() -> None:
+    rules = 'Answer "yes" if the number is even, otherwise answer "no".'
+    questions = [random_number() for _ in range(QUESTIONS_COUNT)]
+    answers = [is_even(number) for number in questions]
+    game_engine(rules, questions, answers)
 
 
-def gcd_game(name: str) -> None:
-    print('Find the greatest common divisor of given numbers.')
-    for _ in range(RETRY_COUNT):
-        number1 = random_number()
-        number2 = random_number()
-        print(f'Question: {number1} {number2}')
-        right_answer = get_gcd(number1, number2)
-        if not answer_try(right_answer):
-            print(f'Let\'s try again, {name}!')
-            break
-    else:
-        print(f'Congratulations, {name}!')
+def calc_game() -> None:
+    rules = 'What is the result of the expression?'
+    expressions = [(random_number(), choice(["+", "-", "*"]), random_number())
+                   for _ in range(QUESTIONS_COUNT)]
+    questions = [f'{number1} {operation} {number2}'
+                 for number1, operation, number2 in expressions]
+    answers = [get_answer_of_expression(number1, number2, operation)
+               for number1, operation, number2 in expressions]
+    game_engine(rules, questions, answers)
 
 
-def progression_game(name: str) -> None:
-    print('What number is missing in the progression?')
-    for _ in range(RETRY_COUNT):
-        progression, right_answer = rand_arithmetic_progression()
-        print(f'Question: {" ".join(map(str, progression))}')
-        if not answer_try(str(right_answer)):
-            print(f'Let\'s try again, {name}!')
-            break
-    else:
-        print(f'Congratulations, {name}!')
+def gcd_game() -> None:
+    rules = 'Find the greatest common divisor of given numbers.'
+    questions = [(random_number(), random_number())
+                 for _ in range(QUESTIONS_COUNT)]
+    answers = [get_gcd(*question) for question in questions]
+    game_engine(rules, questions, answers)
 
 
-def prime_game(name: str) -> None:
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    for _ in range(RETRY_COUNT):
-        number = random_number()
-        right_answer = 'yes' if is_prime(number) else 'no'
-        print(f'Question: {number}')
-        if not answer_try(right_answer):
-            print(f'Let\'s try again, {name}!')
-            break
-    else:
-        print(f'Congratulations, {name}!')
+def progression_game() -> None:
+    rules = 'What number is missing in the progression?'
+    progressions = [rand_arithmetic_progression()
+                    for _ in range(QUESTIONS_COUNT)]
+    questions = [progression for progression, _ in progressions]
+    answers = [right_answer for _, right_answer in progressions]
+    game_engine(rules, questions, answers)
+
+
+def prime_game() -> None:
+    rules = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+    questions = [random_number() for _ in range(QUESTIONS_COUNT)]
+    answers = [is_prime(number) for number in questions]
+    game_engine(rules, questions, answers)
