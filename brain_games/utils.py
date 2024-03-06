@@ -45,9 +45,9 @@ def rand_arithmetic_progression() -> tuple[list, str]:
     step = randint(1, 10)
     len_progression = randint(5, 10)
     progression: list[Union[int, str]] = \
-        [start + step * i for i in range(len_progression)]
+        [str(start + step * i) for i in range(len_progression)]
     hidden_index = randint(0, len_progression - 1)
-    right_answer = str(progression[hidden_index])
+    right_answer = progression[hidden_index]
     progression[hidden_index] = '..'
     return progression, right_answer
 
