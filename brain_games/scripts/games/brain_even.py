@@ -1,5 +1,5 @@
 from brain_games.scripts.games.brain_calc import random_number
-from brain_games.engine import game_engine, QUESTIONS_COUNT
+from brain_games.engine import game_engine
 
 
 def is_even(number: int) -> bool:
@@ -17,7 +17,7 @@ def even_game(answer_count: int) -> tuple[str, list[int], list[str]]:
 
 
 def main() -> None:
-    game_engine(*even_game(QUESTIONS_COUNT))
+    game_engine(even_game)
 
 
 if __name__ == '__main__':

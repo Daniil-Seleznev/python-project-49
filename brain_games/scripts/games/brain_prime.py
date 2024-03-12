@@ -1,5 +1,5 @@
 from brain_games.scripts.games.brain_calc import random_number
-from brain_games.engine import game_engine, QUESTIONS_COUNT
+from brain_games.engine import game_engine
 
 
 def is_prime(number: int) -> bool:
@@ -19,7 +19,7 @@ def prime_game(answer_count: int) -> tuple[str, list[int], list[str]]:
 
 
 def main() -> None:
-    game_engine(*prime_game(QUESTIONS_COUNT))
+    game_engine(prime_game)
 
 
 if __name__ == '__main__':

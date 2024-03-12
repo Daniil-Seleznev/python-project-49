@@ -1,5 +1,5 @@
 from brain_games.scripts.games.brain_calc import random_number
-from brain_games.engine import game_engine, QUESTIONS_COUNT
+from brain_games.engine import game_engine
 from random import randint
 from typing import Union
 
@@ -26,7 +26,7 @@ def progression_game(answer_count: int) -> tuple[str, list[str], list[str]]:
 
 
 def main() -> None:
-    game_engine(*progression_game(QUESTIONS_COUNT))
+    game_engine(progression_game)
 
 
 if __name__ == '__main__':

@@ -16,7 +16,8 @@ def answer_try(right_answer: str) -> bool:
         return False
 
 
-def game_engine(rules: str, questions: list, answers: list) -> None:
+def game_engine(game: callable) -> None:
+    rules, questions, answers = game(QUESTIONS_COUNT)
     greeting()
     name = welcome_user()
     print(rules)
