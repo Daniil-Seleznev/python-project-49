@@ -1,6 +1,19 @@
 from brain_games.cli import welcome_user
 from brain_games.scripts.main import greeting
-from brain_games.utils import answer_try
+import prompt
+
+QUESTIONS_COUNT = 3
+
+
+def answer_try(right_answer: str) -> bool:
+    user_answer = prompt.string('Your answer: ')
+    if user_answer == right_answer:
+        print('Correct!')
+        return True
+    else:
+        print(f"'{user_answer}' is wrong answer ;(. "
+              f"Correct answer was '{right_answer}'.")
+        return False
 
 
 def game_engine(rules: str, questions: list, answers: list) -> None:
