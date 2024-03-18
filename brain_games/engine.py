@@ -20,7 +20,7 @@ def game_engine(game: callable, rules: str) -> None:
     greeting()
     name = welcome_user()
     print(rules)
-    for question, right_answer in range(QUESTIONS_COUNT):
+    for _ in range(QUESTIONS_COUNT):
         question, right_answer = game()
         print(f'Question: {question}')
         if not answer_try(right_answer):
