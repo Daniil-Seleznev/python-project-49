@@ -12,5 +12,5 @@ def is_prime(number: int) -> bool:
 
 def prime_game() -> tuple[int, str]:
     question = random_number()
-    answers = 'yes' if is_prime(question) else 'no'
-    return question, answers
+    answer = 'yes' if is_prime(question) else 'no'
+    return question, answer
