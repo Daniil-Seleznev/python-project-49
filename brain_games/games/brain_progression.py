@@ -1,10 +1,9 @@
-from brain_games.games.brain_calc import random_number
 from random import randint
 from typing import Union
 
 
 def rand_arithmetic_progression() -> tuple[list, str]:
-    start = random_number()
+    start = randint(1, 100)
     step = randint(1, 10)
     len_progression = randint(5, 10)
     progression: list[Union[int, str]] = \

@@ -1,4 +1,4 @@
-from brain_games.games.brain_calc import random_number
+from random import randint
 
 
 def get_gcd(a: int, b: int) -> str:
@@ -8,7 +8,7 @@ def get_gcd(a: int, b: int) -> str:
 
 
 def gcd_game() -> tuple[str, str]:
-    number1, number2 = random_number(), random_number()
+    number1, number2 = randint(1, 100), randint(1, 100)
     question = f'{number1} {number2}'
     answer = str(get_gcd(number1, number2))
     return question, answer

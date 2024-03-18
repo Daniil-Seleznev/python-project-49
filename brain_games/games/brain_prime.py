@@ -1,4 +1,4 @@
-from brain_games.games.brain_calc import random_number
+from random import randint
 
 
 def is_prime(number: int) -> bool:
@@ -11,6 +11,6 @@ def is_prime(number: int) -> bool:
 
 
 def prime_game() -> tuple[int, str]:
-    question = random_number()
+    question = randint(1, 100)
     answer = 'yes' if is_prime(question) else 'no'
     return question, answer

@@ -1,4 +1,4 @@
-from brain_games.games.brain_calc import random_number
+from random import randint
 
 
 def is_even(number: int) -> bool:
@@ -9,6 +9,6 @@ def is_even(number: int) -> bool:
 
 
 def even_game() -> tuple[int, str]:
-    question = random_number()
+    question = randint(1, 100)
     answer = 'yes' if is_even(question) else 'no'
     return question, answer
